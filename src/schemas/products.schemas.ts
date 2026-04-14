@@ -3,7 +3,7 @@ import { t, type Static } from "elysia";
 const tags = ["Products"]; // Category tags for API documentation
 
 /*
-  Products route schema (GET /products)
+  Products route schema (GET /products/search)
 */
 
 // Response schema for 200 OK
@@ -27,7 +27,7 @@ export const productSearchRouteSchema = {
     }),
   detail: {
     tags,
-    summary: "Products",
+    summary: "Products search",
     description: "Returns all the queried products from the db",
   },
 };
