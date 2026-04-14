@@ -6,6 +6,7 @@ import { errorHandler } from "./errorHandler";
 import { healthRoutes } from "./routes/health.routes";
 import "./utils/db";
 import { productsRoutes } from "./routes/products.routes";
+import { rateLimit } from "elysia-rate-limit"
 
 export const app = new Elysia()
   .use(cors)
@@ -13,6 +14,10 @@ export const app = new Elysia()
   .use(logger)
   .use(errorHandler)
   .use(healthRoutes)
-  .use(productsRoutes);
+  .use(productsRoutes)
+  .use(rateLimit({
+    duration: 60000, 
+    max: 100         
+}));
 
 export type App = typeof app;
