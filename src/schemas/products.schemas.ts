@@ -1,13 +1,8 @@
 import { t, type Static } from "elysia";
 
-const tags = ["Products"]; // Category tags for API documentation
+const tags = ["Products"]; 
 
-/*
-  Products route schema (GET /products/search)
-*/
-
-// Response schema for 200 OK
-export const productsSuccessResponseSchema = t.Array(t.Object({
+export const productSchema = t.Object({
   id: t.Number(),
   rnpa: t.String(),
   marca: t.String(),
@@ -15,7 +10,14 @@ export const productsSuccessResponseSchema = t.Array(t.Object({
   denominacion_venta: t.String(),
   tipo_producto: t.String(),
   estado: t.String() 
-}));
+});
+
+/*
+  Products route schema (GET /products/search)
+*/
+
+// Response schema for 200 OK
+export const productsSuccessResponseSchema = t.Array(productSchema);
 
 // Schema itself for the products search route
 export const productSearchRouteSchema = {
