@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 load_dotenv()
 
-#get the xlsx file with all the alg info from ANMAT website
+#get the xlsx file with all the alg info from ANMAT's website
 def download_file():
     get_website_info = requests.get('https://listadoalg.anmat.gob.ar/Home')
     get_website_info.raise_for_status()
@@ -32,7 +32,7 @@ def download_file():
     return "data/busqueda-listado-alg.xlsx"
 
 ##
-#extract the data from the xlsx file 
+#extracts the data from the xlsx file 
 
 def process_data_from_file(path):
     df = pd.read_excel(path)
@@ -47,7 +47,7 @@ def process_data_from_file(path):
     })
     return df
 
-#update the database with the new data
+#updates the database with the new data
 
 def update_db(df):
     try:
