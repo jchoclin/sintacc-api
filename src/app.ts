@@ -4,7 +4,7 @@ import { swagger } from "./swagger";
 import { logger } from "./middlewares/logger";
 import { errorHandler } from "./errorHandler";
 import { healthRoutes } from "./routes/health.routes";
-import "./utils/db";
+import "./databases/postgres";
 import { productsRoutes } from "./routes/products.routes";
 import { rateLimit } from "elysia-rate-limit"
 

@@ -1,6 +1,6 @@
 import postgres from "postgres";
-import { log } from "./logger";
-import { env } from "./env";
+import { log } from "../utils/logger";
+import { env } from "../utils/env";
 
 
 
